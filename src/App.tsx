@@ -1,5 +1,4 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import Counter from './components/Counter/Counter';
 import AboutPage from './pages/AboutPage/AboutPage';
 import MainPage from './pages/MainPage/MainPage';
 

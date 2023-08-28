@@ -9,5 +9,6 @@ export function buildDevServer({ path, port }: BuildOptions): DevServerConfigura
       directory: path.build,
     },
     compress: true,
+    historyApiFallback: true,
   };
 }
