@@ -6,6 +6,8 @@ function buildResolves({ path }: BuildOptions): ResolveOptions {
 	return {
     extensions: ['.tsx', '.ts', '.js'],
     modules: [path.src, 'node_modules'],
+    mainFiles: ['index'],
+    alias: {},
   }
 }
 

@@ -1,4 +1,4 @@
-import classes from './Loader.module.scss';
+import classes from '../styles/Loader.module.scss';
 
 const Loader = () => {
 	return (

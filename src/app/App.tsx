@@ -1,11 +1,11 @@
-import { Suspense, lazy } from 'react';
+import { ComponentType, FC, Suspense, lazy } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
-import { useTheme } from 'theme/useTheme';
-import { classNames } from 'helpers/classNames/classNames';
+import Loader from 'shared/ui/Loader';
+import { classNames } from 'shared/lib';
+import { useTheme } from 'app/provider/theme';
 
-const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
-const MainPage = lazy(() => import('pages/MainPage/MainPage'));
+const AboutPage = lazy(() => import('pages/MainPage'));
+const MainPage = lazy(() => import('pages/MainPage'));
 
 const App = () => {
 	const { theme, setTheme } = useTheme();
