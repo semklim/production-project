@@ -18,7 +18,7 @@ function buildLoaders({ isDev }:BuildOptions): RuleSetRule[] {
         loader: "css-loader",
         options: {
           modules: {
-            auto: /.module.scss$/g,
+            auto: /\.module\.s[ac]ss$/,
             localIdentName: isDev
             ? '[path][name]__[local]--[hash:base64:5]' 
             : '[hash:base64:8]',
