@@ -9,6 +9,21 @@ function buildLoaders({ isDev }:BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   };
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    type: "asset/resource",
+    generator: {
+        publicPath: isDev ? '/assets/' : '//assets/', // I don`t know why for production I need other publicPath
+        outputPath: 'assets/',
+    },
+
+  };
+
   const SASSLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -31,6 +46,8 @@ function buildLoaders({ isDev }:BuildOptions): RuleSetRule[] {
   };
 
 	return [
+    svgLoader,
+    fileLoader,
 		typescriptLoader,
     SASSLoader,
 	];
